@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>IMC Calculator</title>
+        <link rel="stylesheet" href="css/styles.css"> 
     </head>
     <body>
         <div class="app">
@@ -11,8 +12,9 @@
 
             <h1>Caluladora IMC</h1>
 
+            <div class="form">
             <form id="imcForm">
-                <div class="form-group">
+                <div class="form-peso">
                     <label for="Peso">Peso (kg)</label>
                     <input 
                         type="number"
@@ -22,6 +24,7 @@
                         placeholder="Ingresa Tu Peso"
                         required
                         />
+                
                 </div>
 
                 <div class="form-group">
@@ -35,15 +38,17 @@
                         required
                         />
                 </div>
-
+                </div>
                 <button type="submit">Calcular</button>
             </form>
+            </div>
 
         <div class="Resultado">
             <h2>Resultado</h2>
             <p id="ValorIMC"></p>
             <p id="ClasificacionIMC"></p>
             
+        </div>
         </div>
     </body>
 </html>
