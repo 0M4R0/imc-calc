@@ -115,29 +115,37 @@ calcularBtn.addEventListener('click', (e) => {
         pesoKgInput.value = pesoKg.toFixed(2);
     }
 
-    const alturaM = alturaCm / 100;
-    const imc = pesoKg / (alturaM * alturaM);
-    valorIMC.textContent = `IMC: ${imc.toFixed(2)}`;
-
-    let clasificacion = '';
-    if (imc < 18.5) {
-        clasificacion = 'Bajo peso';
-    } else if (imc >= 18.5 && imc < 25) {
-        clasificacion = 'Peso normal';
-    } else if (imc >= 25 && imc < 30) {
-        clasificacion = 'Sobrepeso';
-    } else {
-        clasificacion = 'Obesidad';
-    }
-    clasificacionIMC.textContent = `Clasificación: ${clasificacion}`;
-    resultadoDiv.classList.remove('is-hidden');
-
-// Validar campos
+    // Validar campos antes de realizar el cálculo final
     if (isNaN(alturaCm) || isNaN(pesoKg) || alturaCm <= 0 || pesoKg <= 0) {
         alert('Por favor, ingresa valores válidos para altura y peso.');
         resultadoDiv.classList.add('is-hidden');
         return;
     }
+
+    const alturaM = alturaCm / 100;
+    const imc = pesoKg / (alturaM * alturaM);
+    valorIMC.textContent = `IMC: ${imc.toFixed(2)}`;
+
+    let clasificacion = '';
+    if (imc < 16) {
+        clasificacion = "Delgadez severa";
+    } else if (imc < 17) {
+        clasificacion = "Delgadez moderada";
+    } else if (imc < 18.5) {
+        clasificacion = "Bajo peso";
+    } else if (imc < 25) {
+        clasificacion = "Peso normal";
+    } else if (imc < 30) {
+        clasificacion = "Sobrepeso";
+    } else if (imc < 35) {
+        clasificacion = "Obesidad tipo I";
+    } else if (imc < 40) {
+        clasificacion = "Obesidad tipo II";
+    } else {
+        clasificacion = "Obesidad tipo III";
+    }
+    clasificacionIMC.textContent = `Clasificación: ${clasificacion}`;
+    resultadoDiv.classList.remove('is-hidden');
 
 // Mujer y Hombre
 const esHombre = sexoHombreInput.checked;
