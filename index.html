@@ -94,11 +94,11 @@
                             </div>
 
                             <div class="field-inputs">
-                                <div id="pesoLbWrap">
+                                <div id="pesoLbWrap" class=" is-hidden">
                                     <input type="number" id="pesoLb" name="pesoLb" step="0.1" placeholder="Ej: 170 (lb)" required />
                                 </div>
 
-                                <div id="pesoKgWrap" class="is-hidden altura-ftin">
+                                <div id="pesoKgWrap">
                                     <input type="number" id="pesoKg" name="pesoKg" step="0.1" placeholder="Ej: 70 (kg)" required />
                                 </div>
                             </div>  
@@ -110,7 +110,7 @@
                 </form>
             </div>
 
-            <div class="Resultado is-hidden">
+            <div id="resultado" class="Resultado is-hidden">
                 <h2>Resultado</h2>
                 <p id="ValorIMC"></p>
                 <p id="ClasificacionIMC"></p>
