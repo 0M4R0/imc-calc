@@ -38,10 +38,84 @@ h1 {
 }
 
 .form-peso,
-.form-group {
+.form-altura {
+    margin: 15px 0 0;
+    justify-content: space-between;
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
+}
+
+.form-sexo p {
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.field-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.toggle {
+    display: inline-flex;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 4px;
+    gap: 6px;
+    background: #fff;
+}
+
+.toggle__btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.toggle__btn input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.toggle__content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-weight: 700;
+    user-select: none;
+    color: #555;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.toggle--sm .toggle__content {
+    padding: 6px 10px;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 9px;
+}
+
+.toggle--lg .toggle__content {
+    padding: 12px 14px;
+}
+
+.toggle__btn input:checked + .toggle__content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+
+
+.altura-ftin {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
 label {
@@ -56,6 +130,10 @@ input[type="number"] {
     border-radius: 8px;
     font-size: 16px;
     transition: border-color 0.3s;
+}
+
+input[type="number"]::placeholder {
+    color: #9aa0a6;
 }
 
 input[type="number"]:focus {
@@ -115,3 +193,12 @@ button[type="submit"]:active {
     color: #764ba2;
     font-weight: 500;
 }
+
+
+.is-hidden {
+    display: none;
+}
+
+.altura, .peso {
+    margin: 20px 0;
+};
