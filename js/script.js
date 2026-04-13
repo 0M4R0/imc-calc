@@ -150,6 +150,7 @@ calcularBtn.addEventListener('click', (e) => {
 // Mujer y Hombre
 const esHombre = sexoHombreInput.checked;
 const esMujer = sexoMujerInput.checked;
+ 
 
 if (esHombre) {
     console.log('El usuario es hombre');

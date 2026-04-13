@@ -1,204 +1,337 @@
-
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Fondo principal */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+    background: linear-gradient(
+        135deg,
+        #667eea 0%,
+        #764ba2 50%,
+        #6a5acd 100%
+    );
+
     min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Tarjeta principal */
 .app {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    padding: 40px;
-    max-width: 500px;
-    width: 90%;
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 45px 40px;
+
+    max-width: 520px;
+    width: 92%;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.15),
+        0 10px 20px rgba(0, 0, 0, 0.08);
+
+    animation: fadeIn 0.6s ease;
 }
 
+/* Animación entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título */
 h1 {
     text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-    font-size: 28px;
+
+    color: #4b3f72;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    margin-bottom: 35px;
+
+    letter-spacing: 0.5px;
 }
 
+/* Formulario */
 .form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+
+    gap: 25px;
+
     margin-bottom: 30px;
 }
 
+/* Secciones altura y peso */
 .form-peso,
 .form-altura {
-    margin: 15px 0 0;
-    justify-content: space-between;
     display: flex;
+
     flex-direction: row-reverse;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 10px;
 }
 
-.form-sexo p {
+/* Texto secciones */
+.form-sexo p,
+label {
     font-weight: 600;
+
     color: #555;
+
     font-size: 14px;
+
     margin-bottom: 8px;
 }
 
+/* Header campos */
 .field-header {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 12px;
 }
 
+/* Toggle */
 .toggle {
     display: inline-flex;
-    border: 2px solid #ddd;
-    border-radius: 12px;
+
+    border: 2px solid #e0e0e0;
+
+    border-radius: 14px;
+
     padding: 4px;
+
     gap: 6px;
-    background: #fff;
+
+    background: #ffffff;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .toggle__btn {
     position: relative;
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     cursor: pointer;
 }
 
 .toggle__btn input {
     position: absolute;
+
     inset: 0;
+
     opacity: 0;
+
     pointer-events: none;
 }
 
 .toggle__content {
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 8px;
+
     border-radius: 10px;
-    padding: 10px 12px;
+
+    padding: 10px 14px;
+
     font-weight: 700;
-    user-select: none;
+
     color: #555;
-    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+
+    transition: all 0.25s ease;
 }
 
+/* Tamaños */
 .toggle--sm .toggle__content {
-    padding: 6px 10px;
-    font-weight: 700;
+    padding: 6px 12px;
+
     font-size: 12px;
-    border-radius: 9px;
 }
 
 .toggle--lg .toggle__content {
-    padding: 12px 14px;
+    padding: 12px 16px;
 }
 
+/* Seleccionado */
 .toggle__btn input:checked + .toggle__content {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+    color: white;
+
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
-
-.altura-ftin {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-label {
-    font-weight: 600;
-    color: #555;
-    font-size: 14px;
-}
-
+/* Inputs */
 input[type="number"] {
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
+    padding: 13px 14px;
+
+    border: 2px solid #e0e0e0;
+
+    border-radius: 10px;
+
     font-size: 16px;
-    transition: border-color 0.3s;
+
+    width: 100%;
+
+    transition: all 0.25s ease;
+
+    background: #fafafa;
 }
 
+/* Placeholder */
 input[type="number"]::placeholder {
-    color: #9aa0a6;
+    color: #a0a0a0;
 }
 
+/* Focus */
 input[type="number"]:focus {
     outline: none;
+
     border-color: #667eea;
+
+    background: #ffffff;
+
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
 }
 
+/* Botón */
 button[type="submit"] {
-    padding: 12px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
     color: white;
+
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    margin-top: 10px;
+
+    transition: all 0.25s ease;
+
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35);
 }
 
+/* Hover botón */
 button[type="submit"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 28px rgba(102, 126, 234, 0.45);
 }
 
+/* Click botón */
 button[type="submit"]:active {
     transform: translateY(0);
 }
 
+/* Resultado */
 .Resultado {
-    background-color: #f8f9fa;
+    background: #f8f9ff;
+
     padding: 25px;
-    border-radius: 8px;
-    border-left: 4px solid #667eea;
+
+    border-radius: 12px;
+
+    border-left: 6px solid #667eea;
+
+    margin-top: 10px;
+
+    animation: fadeIn 0.4s ease;
 }
 
 .Resultado h2 {
     color: #333;
+
     margin-bottom: 15px;
-    font-size: 20px;
+
+    font-size: 21px;
+
+    font-weight: 700;
 }
 
 .Resultado p {
     color: #555;
+
     font-size: 16px;
+
     line-height: 1.6;
 }
 
+/* Valor IMC */
 #ValorIMC {
-    font-weight: 600;
+    font-weight: 700;
+
     color: #667eea;
-    font-size: 18px;
+
+    font-size: 20px;
 }
 
+/* Clasificación */
 #ClasificacionIMC {
     margin-top: 10px;
+
     color: #764ba2;
-    font-weight: 500;
+
+    font-weight: 600;
 }
 
-
+/* Oculto */
 .is-hidden {
     display: none;
 }
 
-.altura, .peso {
+/* Espaciado */
+.altura,
+.peso {
     margin: 20px 0;
-};
+}
