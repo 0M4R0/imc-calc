@@ -7,14 +7,9 @@
 
 /* Fondo principal */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-    background: linear-gradient(
-        135deg,
-        #667eea 0%,
-        #764ba2 50%,
-        #6a5acd 100%
-    );
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #6a5acd 100%);
 
     min-height: 100vh;
 
@@ -47,6 +42,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -102,8 +98,6 @@ label {
     color: #555;
 
     font-size: 14px;
-
-    margin-bottom: 8px;
 }
 
 /* Header campos */
@@ -157,6 +151,8 @@ label {
 }
 
 .toggle__content {
+    width: 100%;
+
     display: inline-flex;
 
     align-items: center;
@@ -188,12 +184,8 @@ label {
 }
 
 /* Seleccionado */
-.toggle__btn input:checked + .toggle__content {
-    background: linear-gradient(
-        135deg,
-        #667eea,
-        #764ba2
-    );
+.toggle__btn input:checked+.toggle__content {
+    background: linear-gradient(135deg, #667eea, #764ba2);
 
     color: white;
 
@@ -234,16 +226,12 @@ input[type="number"]:focus {
 }
 
 /* Botón */
-button[type="submit"] {
+.btn {
     margin-top: 15px;
 
     padding: 15px;
 
-    background: linear-gradient(
-        135deg,
-        #667eea,
-        #764ba2
-    );
+    background: linear-gradient(135deg, #667eea, #764ba2);
 
     color: white;
 
@@ -263,15 +251,10 @@ button[type="submit"] {
 }
 
 /* Hover botón */
-button[type="submit"]:hover {
-    transform: translateY(-3px);
+#calcularBtn:hover {
+    transform: scale(1.05);
 
     box-shadow: 0 12px 28px rgba(102, 126, 234, 0.45);
-}
-
-/* Click botón */
-button[type="submit"]:active {
-    transform: translateY(0);
 }
 
 /* Resultado */
@@ -334,4 +317,44 @@ button[type="submit"]:active {
 .altura,
 .peso {
     margin: 20px 0;
+}
+
+.form-label {
+    padding-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+
+    .form-peso,
+    .form-altura {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: normal;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .field-header {
+        align-items: flex-end;
+    }
+
+
+    .toggle--lg {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .btnContainer {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .field-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

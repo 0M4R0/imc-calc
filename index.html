@@ -22,7 +22,7 @@
 
                     <!-- Sexo -->
                     <div class="form-sexo">
-                        <p>Sexo</p>
+                        <p class="form-label">Sexo</p>
                         <div class="toggle toggle--lg" role="group" aria-label="Sexo">
                             <label class="toggle__btn">
                                 <input id="sexoHombre" type="radio" name="sexo" value="hombre" checked />
@@ -44,7 +44,7 @@
 
                     <!-- Altura y peso -->
                     <div class="altura">
-                        <label>Altura y peso</label>
+                        <label for="alturaCm">Altura y peso</label>
                         <div class="form-altura">
                             <div class="field-header">
                                 <label for="alturaCm">Unidad:</label>
@@ -77,7 +77,7 @@
                     </div>
 
                     <div class="peso">
-                        <label>Peso</label>
+                        <label for="pesoLb">Peso</label>
                         <div class="form-peso">
                             <div class="field-header">
                                 <label for="pesoValor">Unidad:</label>
@@ -106,7 +106,9 @@
                     </div>
 
                     <!-- Boton de calcular -->
-                    <button id="calcularBtn" type="submit">Calcular</button>
+                    <div class="btnContainer">
+                        <button id="calcularBtn" class="btn" type="submit">Calcular</button>
+                    </div>
                 </form>
             </div>
 
